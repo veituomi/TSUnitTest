@@ -1,0 +1,13 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "module": "system",
+        "removeComments": false,
+        "declaration": true,
+        "stripInternal": true,
+        "outFile": "build/UnitTest.js"
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
