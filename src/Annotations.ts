@@ -44,5 +44,5 @@ function AfterClass(target, propertyKey: string) {
 
 /** Annotates that the method is ignored when running tests. */
 function Ignore(target: UnitTest, propertyKey: string) {
-    console.log(propertyKey + " was ignored.");
+    //console.log(propertyKey + " was ignored.");
 }

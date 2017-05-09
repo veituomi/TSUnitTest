@@ -79,5 +79,5 @@ load("Build.js");
 load("UnitTest.js");
 load("Tests.js");
 
-TestManager.runTests();
+TestManager.runTests(new DefaultConsole());
 ```

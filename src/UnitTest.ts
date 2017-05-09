@@ -10,14 +10,17 @@ abstract class UnitTest {
 
     /** @internal */
     private testCase: TestCase;
+    /** @internal */
+    private console: TestConsole;
 
     /** @internal */
-    constructor(n: string, t: TestCase) {
+    constructor(n: string, t: TestCase, c: TestConsole) {
         this.passed = 0;
         this.failed = 0;
 
         this.name = n;
         this.testCase = t;
+        this.console = c;
 
         this.run();
     }
@@ -39,7 +42,7 @@ abstract class UnitTest {
         }
         this.invokeMethod(this.testCase.afterClass);
         
-        console.info(this.name + ": " + this.passed + "/" + (this.passed + this.failed));
+        this.console.info(this.name + ": " + this.passed + "/" + (this.passed + this.failed));
     }
 
     /** @internal */
@@ -63,7 +66,7 @@ abstract class UnitTest {
         if (condition) {
             this.passed++;
         } else {
-            console.error(message);
+            this.console.error(message);
             this.failed++;
         }
     }

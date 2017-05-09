@@ -48,10 +48,10 @@ class TestManager {
         this.testCases[target] = new TestCase();
     }
 
-    static runTests() {
+    static runTests(testConsole: TestConsole) {
         for (let target of this.testClasses) {
             if (this.testCases[target.name]) {
-                let test = new target(target.name, this.testCases[target.name]);
+                let test = new target(target.name, this.testCases[target.name], testConsole);
             }
         }
     }
